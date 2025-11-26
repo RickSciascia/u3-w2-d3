@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function NetflixNavBar() {
   return (
-    <Navbar expand="lg" data-bs-theme="dark">
+    <Navbar expand="lg" bg="dark" data-bs-theme="dark">
       <Container fluid>
         <Navbar.Brand href="#">
           <img src="/logo.png" style={{ width: "100px", height: "55px" }} />

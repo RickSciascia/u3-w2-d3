@@ -10,7 +10,7 @@ function MovieDetails() {
   const params = useParams();
   //   console.log(params);
   const endpoint = "http://www.omdbapi.com/?apikey=18f7c4ec&i=";
-  let IMDBidToFetch = "tt0241527";
+  let IMDBidToFetch = params.id;
   const getDetails = function () {
     fetch(endpoint + IMDBidToFetch)
       .then((r) => {
@@ -29,7 +29,8 @@ function MovieDetails() {
   };
   useEffect(() => {
     getDetails();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <Container>
       <title>Netflix - Dettagli del Film </title>
@@ -56,8 +57,14 @@ function MovieDetails() {
                   <Card.Text>Attori/Attrici : {movie.Actors}</Card.Text>
                   <Card.Text>Paese/i : {movie.Country}</Card.Text>
                   <Card.Text>Premi : {movie.Awards}</Card.Text>
-                  <Button variant="danger" className="fw-bold text-dark">
-                    Guarda
+                  <Button
+                    variant="danger"
+                    className="fw-bold text-dark"
+                    onClick={() => {
+                      navigate("/");
+                    }}
+                  >
+                    Torna alla Home
                   </Button>
                 </Card.Body>
               </Card>
