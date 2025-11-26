@@ -8,6 +8,7 @@ import TVShows from "./components/TVShows";
 import Profile from "./components/Profile";
 import NetflixNavBar from "./components/NetflixNavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MovieDetails from "./components/MovieDetails";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/tvshows" element={<TVShows />} />
         <Route path="/account" element={<Profile />} />
+        <Route path="/details/" element={<MovieDetails />} />
       </Routes>
       <Footer />
     </BrowserRouter>
